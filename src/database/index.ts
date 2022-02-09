@@ -2,6 +2,7 @@ import { createConnection } from "typeorm";
 import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOptions";
 
 import "dotenv/config";
+import { Avaliacao } from "../entities/Avaliacao";
 
 const conn: MysqlConnectionOptions = {
   type: "mysql",
@@ -10,7 +11,7 @@ const conn: MysqlConnectionOptions = {
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   port: 3306,
-  entities: ["./../../build/src/entities/*.js","src/entities/*.ts"],
+  entities: [Avaliacao],
 };
 
 createConnection(conn);
