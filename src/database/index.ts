@@ -10,7 +10,7 @@ const conn: MysqlConnectionOptions = {
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   port: 3306,
-  entities: ["src/entities/*.ts", "build/src/entities/*.js"],
+  entities: [__dirname+"build/src/entities/*.js","src/entities/*.ts"],
 };
 
 createConnection(conn);
